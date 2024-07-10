@@ -12,7 +12,6 @@ class ExpressServer implements Express {
     constructor(host: string, port: number) {
         this.host = host;
         this.port = port;
-
         this.express = express();
     }
 

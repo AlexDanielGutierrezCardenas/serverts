@@ -1,8 +1,16 @@
-import { Router } from 'express';
-import usersRouter from './usersRouter';
+import { Router, Request, Response } from 'express';
+import path from 'path';
 
-const routes = Router();
+const router = Router();
 
-routes.use('/users', usersRouter);
+router.get('/', (req: Request, res: Response) => {
+    // res.send('Hello, World!');
+    res.sendFile(path.join(__dirname, '../public/home.html'));
+});
 
-export default routes;
+router.get('/about', (req: Request, res: Response) => {
+    // res.send('About Page');
+    res.sendFile(path.join(__dirname, '../public/about.html'));
+});
+
+export default router;
