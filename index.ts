@@ -6,8 +6,6 @@ const PORT: number = Number(process.env.PORT) || 3000;
 
 const server = new ExpressServer(HOST, PORT);
 
-server.use(express.json());
-server.use(routes);
 try {
     server.listen();
 } catch (error) {
